@@ -31,3 +31,141 @@ body {
     text-wrap: balance;
   }
 }
+
+/* styles/global.css */
+@font-face {
+  font-family: 'Colonna MT';
+  src: url('/fonts/ColonnaMT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Colonna MT', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background colors */
+.bg-customGold {
+  background-color: #FFFF00; /* Your custom gold color */
+  background-image: url('/images/GeaR White.png');
+  background-size: contain; /* Ensure the image fits within the background */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* Keep the image fixed while scrolling */
+}
+
+.bg-customGoldo {
+  background-color: #FFFF00; /* Your custom gold color */
+  background-size: contain; /* Ensure the image fits within the background */
+  background-position: center;
+}
+
+.bg-customBlue {
+  background-color: #4381C1; /* Your custom green color */
+  background-size: contain; /* Ensure the image fits within the background */
+  background-position: center;
+}
+
+.bg-customPink {
+  background-color: #FFD5FF; /* Your custom green color */
+  background-size: contain; /* Ensure the image fits within the background */
+  background-position: center;
+}
+.bg-customGreen {
+  background-color: #AAC0AF; /* Your custom green color */
+  background-size: contain; /* Ensure the image fits within the background */
+  background-position: center;
+}
+
+.bg-customRed {
+  background-color: #FFD4CA; /* Your custom red color */
+  background-size: contain; /* Ensure the image fits within the background */
+  background-position: center;
+}
+
+/* Text colors */
+.text-customGold {
+  color: #FFFF00; /* Your custom gold color */
+}
+
+.text-customGreen {
+  color: #AAC0AF; /* Your custom green color */
+}
+
+.text-customBlue {
+  color: #4381C1; /* Your custom gold color */
+}
+
+.text-customPink {
+  color: #FFD5FF; /* Your custom green color */
+}
+
+.text-customRed {
+  color: #FFD4CA; /* Your custom red color */
+}
+
+.text-customDarkRed {
+  color: #4c1c00; /* Your custom red color */
+}
+
+.text-customDarkGold {
+  color: #483f33; /* Your custom gold color */
+}
+
+.text-customDarkGreen {
+  color: #333333; /* Your custom green color */
+}
+
+
+
+/* Overlay */
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(255, 215, 0, 0.5);  */
+  /* Custom gold color with transparency */
+}
+/* Global CSS file (e.g., styles/globals.css) */
+
+#brand-logo-container {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+#brand-logo-container.sucked {
+  transform: scale(0.1);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.navbar-logo, .ad-content {
+  max-height: 50px; /* Ensure it doesn't exceed navbar height */
+  animation: pop-up 0.5s forwards;
+}
+
+.ad-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.animated-image {
+  animation: pop-up 1s ease-in-out;
+}
+
+@keyframes pop-up {
+  from {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
