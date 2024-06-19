@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from 'react';
-import { Coda } from "next/font/google";
+
 
 export default function LandingAds() {
   const [showAd, setShowAd] = useState<boolean>(false);
@@ -63,7 +63,7 @@ export default function LandingAds() {
       </div>
 
       <div className="h-screen bg-customBlue">
-        <div className="flex flex-row h-3/4">
+        <div className="flex flex-row h-screen pb-10">
           <div className="relative bg-customPink flex-1 flex items-end justify-center">
             <div className="relative w-3/4 h-3/4 bottom-0">
               {showAnimations && (
