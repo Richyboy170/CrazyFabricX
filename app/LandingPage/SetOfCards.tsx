@@ -1,4 +1,6 @@
-"use client";
+// SetOfCards.tsx
+
+"use client"
 import React, { useState, useEffect } from 'react';
 import Card from '@/app/Components/Card';
 import ShoppingCart from '@/app/Stack/ShoppingCart';
@@ -50,6 +52,10 @@ const SetOfCards: React.FC = () => {
     );
   };
 
+  const handleRemoveItem = (id: string) => {
+    setCartItems((prevItems) => prevItems.filter(item => item.id !== id));
+  };
+
   return (
     <div className="container mx-auto p-8 bg-customBlue">
       <Filter selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
@@ -72,6 +78,7 @@ const SetOfCards: React.FC = () => {
         cartItems={cartItems}
         onAddQuantity={handleAddQuantity}
         onRemoveQuantity={handleRemoveQuantity}
+        onRemoveItem={handleRemoveItem}
       />
     </div>
   );

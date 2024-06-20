@@ -68,8 +68,20 @@ body {
   background-position: center;
 }
 
+.bg-customLightGold {
+  background-color: #FFFF5B;
+  background-size: contain;
+  background-position: center;
+}
+
 .bg-customBlue {
   background-color: #4381C1;
+  background-size: contain;
+  background-position: center;
+}
+
+.bg-customLightBlue {
+  background-color: #6995C3;
   background-size: contain;
   background-position: center;
 }
