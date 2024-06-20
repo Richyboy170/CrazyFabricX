@@ -17,6 +17,9 @@ const Navbar: React.FC = () => {
       if (window.scrollY > 50) {
         setShowNavbar(true);
         setShowLogo(true);
+      } else {
+        setShowNavbar(false);
+        setShowLogo(false);
       }
     };
 
@@ -57,7 +60,7 @@ const Navbar: React.FC = () => {
           <Link href="/profile" className="text-customBlue">
             User Profile
           </Link>
-          <Link href="/cart" className="text-customBlue">
+          <Link href="/Stack/ShoppingCart" className="text-customBlue">
             Shopping Cart
           </Link>
           <button

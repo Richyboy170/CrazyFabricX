@@ -68,7 +68,7 @@ export default function LandingAds() {
             <div className="relative w-3/4 h-3/4 bottom-0">
               {showAnimations && (
                 <Image
-                  src="/images/whoCut.png"
+                  src="/images/SSoatmeal.png"
                   alt="Ad 1"
                   layout="fill"
                   objectFit="contain"
@@ -81,7 +81,7 @@ export default function LandingAds() {
             <div className="relative w-3/4 h-3/4 bottom-0">
               {showAnimations && (
                 <Image
-                  src="/images/whoCut.png"
+                  src="/images/SSsky.png"
                   alt="Ad 2"
                   layout="fill"
                   objectFit="contain"
@@ -94,7 +94,7 @@ export default function LandingAds() {
             <div className="relative w-3/4 h-3/4 bottom-0">
               {showAnimations && (
                 <Image
-                  src="/images/whoCut.png"
+                  src="/images/SSpink.png"
                   alt="Ad 3"
                   layout="fill"
                   objectFit="contain"

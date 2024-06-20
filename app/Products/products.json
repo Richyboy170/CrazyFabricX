@@ -62,7 +62,7 @@
   {
     "id": "product2",
     "image": "/images/dull.png",
-    "hoverImage": "/images/Oatmeal.jpg",
+    "hoverImage": "/images/whoCut.png",
     "shoppingCartImage": "/images/dull.png",
     "name": "Product 2",
     "price": 200,
@@ -77,7 +77,7 @@
   {
     "id": "product3",
     "image": "/images/dull.png",
-    "hoverImage": "/images/Oatmeal.jpg",
+    "hoverImage": "/images/whoCut.png",
     "shoppingCartImage": "/images/dull.png",
     "name": "Product 3",
     "price": 300,
@@ -92,7 +92,7 @@
   {
     "id": "product1",
     "image": "/images/dull.png",
-    "hoverImage": "/images/Oatmeal.jpg",
+    "hoverImage": "/images/whoCut.png",
     "shoppingCartImage": "/images/dull.png",
     "name": "Product 1",
     "price": 100,

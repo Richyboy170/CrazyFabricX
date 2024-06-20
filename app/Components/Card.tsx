@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({ image, hoverImage, name, price, link, onAdd
           </div>
           <div className="p-4">
             <h3 className="text-xl font-bold text-black" style={{ fontFamily: 'bm hanna_tff' }}>{name}</h3>
-            <p className="text-lg text-customDarkGreen mt-2" style={{ fontFamily: 'bm hanna_tff' }}>{price}</p>
+            <p className="text-lg text-customDarkGreen mt-2" style={{ fontFamily: 'bm hanna_tff' }}>{price} Baht</p>
           </div>
         </div>
       </Link> 
