@@ -1,12 +1,16 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Card from '@/app/Components/Card';
+import ShoppingCart from '@/app/Stack/ShoppingCart';
 import Filter from '@/app/Components/Filter';
 import productData from '@/app/Products/products.json';
+import { Product, CartItem } from '@/app/types';
 
 const SetOfCards: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [products, setProducts] = useState(productData);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [products, setProducts] = useState<Product[]>(productData);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
     if (selectedCategory === 'All') {
@@ -15,6 +19,36 @@ const SetOfCards: React.FC = () => {
       setProducts(productData.filter(product => product.category === selectedCategory));
     }
   }, [selectedCategory]);
+
+  const handleAddToCart = (product: Product) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(item => item.id === product.id);
+      if (existingItem) {
+        return prevItems.map(item =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        return [...prevItems, { ...product, quantity: 1 }];
+      }
+    });
+    setIsCartOpen(true);
+  };
+
+  const handleAddQuantity = (id: string) => {
+    setCartItems((prevItems) =>
+      prevItems.map(item =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const handleRemoveQuantity = (id: string) => {
+    setCartItems((prevItems) =>
+      prevItems.map(item =>
+        item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
+      )
+    );
+  };
 
   return (
     <div className="container mx-auto p-8 bg-customBlue">
@@ -26,11 +60,19 @@ const SetOfCards: React.FC = () => {
             image={product.image}
             hoverImage={product.hoverImage || product.image}
             name={product.name}
-            price={product.price}
+            price={product.price.toString()}
             link={`/Products/${product.id}`}
+            onAddToCart={() => handleAddToCart(product)}
           />
         ))}
       </div>
+      <ShoppingCart
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+        onAddQuantity={handleAddQuantity}
+        onRemoveQuantity={handleRemoveQuantity}
+      />
     </div>
   );
 };
