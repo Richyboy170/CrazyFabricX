@@ -4,7 +4,8 @@ import LandingAds from '@/app/LandingPage/Landing'
 import Navbar from '@/app/Components/Navbar'
 import SetOfCards from '@/app/LandingPage/SetOfCards'
 import Testimonials from '@/app/Testimonials/Testimonials'
-import ProductsTestimonials from '@/app/Testimonials/ProductsTestimonials';
+import EndingSlide from '@/app/Components/EndingSlide';
+
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
           <SetOfCards/>
           <hr className="border-t-2 border-gray-300 my-8" />
           <Testimonials/>
+          <EndingSlide/>
         </div>
     );
 }
