@@ -1,18 +1,18 @@
-// SetOfCards.tsx
+// app/LandingPage/SetOfCards.tsx
 
-"use client"
+"use client";
 import React, { useState, useEffect } from 'react';
 import Card from '@/app/Components/Card';
-import Navbar from '@/app/Components/Navbar';
 import ShoppingCart from '@/app/Stack/ShoppingCart';
 import Filter from '@/app/Components/Filter';
 import productData from '@/app/Products/products.json';
 import { Product, CartItem } from '@/app/types';
+import { useCart } from '@/app/Stack/CartContext';
 
 const SetOfCards: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [products, setProducts] = useState<Product[]>(productData);
-  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const { isCartOpen, openCart, closeCart } = useCart();
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const SetOfCards: React.FC = () => {
         return [...prevItems, { ...product, quantity: 1 }];
       }
     });
-    setIsCartOpen(true);
+    openCart();
   };
 
   const handleAddQuantity = (id: string) => {
@@ -75,7 +75,7 @@ const SetOfCards: React.FC = () => {
       </div>
       <ShoppingCart
         isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
+        onClose={closeCart}
         cartItems={cartItems}
         onAddQuantity={handleAddQuantity}
         onRemoveQuantity={handleRemoveQuantity}

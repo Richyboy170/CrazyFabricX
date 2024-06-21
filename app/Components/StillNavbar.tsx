@@ -12,7 +12,7 @@ interface CartItem {
   quantity: number;
 }
 
-const Navbar: React.FC = () => {
+const StillNavbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
   const [showLogo, setShowLogo] = useState<boolean>(false);
@@ -73,13 +73,12 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className={`bg-customGold p-4 fixed top-0 left-0 right-0 z-50 ${showNavbar ? 'visible' : 'invisible'}`}>
+      <nav className="bg-customGold p-4 fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto flex justify-between items-center relative">
           <Link href="/points" className="text-customBlue">
             My Points: xxx
           </Link>
 
-          {showLogo && (
             <div className="navbar-logo-container">
               <Image
                 src="/images/MainBrand2 Navy.png"
@@ -91,7 +90,6 @@ const Navbar: React.FC = () => {
                 onClick={handleLogoClick}
               />
             </div>
-          )}
 
           <div className="flex items-center space-x-4">
             <Link href="/MyAccount/AccountDetails" className="text-customBlue">
@@ -141,4 +139,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default StillNavbar;

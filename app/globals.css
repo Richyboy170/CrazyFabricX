@@ -154,10 +154,23 @@ body {
   visibility: hidden;
 }
 
-.navbar-logo, .ad-content {
+.ad-content {
   max-height: 50px;
   animation: pop-up 0.5s forwards;
 }
+.navbar-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-logo {
+  cursor: pointer;
+  max-width: 100px; /* Ensure the logo doesn't expand beyond its intended size */
+  max-height: 50px;
+}
+
 
 .ad-content {
   display: flex;
