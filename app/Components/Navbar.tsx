@@ -75,25 +75,26 @@ const Navbar: React.FC = () => {
     <>
       <nav className={`bg-customGold p-4 fixed top-0 left-0 right-0 z-50 ${showNavbar ? 'visible' : 'invisible'}`}>
         <div className="container mx-auto flex justify-between items-center relative">
-          <Link href="/points" className="text-customBlue">
+          <Link href="/points" className="text-customBlue z-20">
             My Points: xxx
           </Link>
 
           {showLogo && (
-            <div className="navbar-logo-container">
-              <Image
-                src="/images/MainBrand2 Navy.png"
-                alt="Brand Logo"
-                width={100}
-                height={50}
-                objectFit="contain"
-                className="navbar-logo"
-                onClick={handleLogoClick}
-              />
+            <div className="absolute inset-0 flex justify-center items-center z-10">
+              <Link href="/">
+                <Image
+                  src="/images/MainBrand2 Navy.png"
+                  alt="Brand Logo"
+                  width={100}
+                  height={50}
+                  objectFit="contain"
+                  className="navbar-logo"
+                />
+              </Link>
             </div>
           )}
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 z-20">
             <Link href="/MyAccount/AccountDetails" className="text-customBlue">
               User Profile
             </Link>
@@ -112,7 +113,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
         {isMenuOpen && (
-          <div className="bg-customBlue mt-2 p-4 rounded">
+          <div className="bg-customBlue mt-2 p-4 rounded z-20">
             <ul className="space-y-2">
               <li>
                 <Link href="/contact" className="text-customGold">

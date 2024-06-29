@@ -81,10 +81,18 @@ body {
 }
 
 .bg-customLightBlue {
-  background-color: #6995C3;
+  background-color: #5993CF;
   background-size: contain;
   background-position: center;
 }
+
+.bg-customDarkBlue {
+  background-color: #0064CB;
+  background-size: contain;
+  background-position: center;
+}
+
+
 
 .bg-customPink {
   background-color: #FFD5FF;
@@ -104,6 +112,14 @@ body {
   background-position: center;
 }
 
+.border-customDarkBlue{
+  border-color: #0064CB;
+}
+
+.border-customGold{
+  border-color: #FFFF00;
+}
+
 .text-customGold {
   color: #FFFF00;
 }
@@ -114,6 +130,10 @@ body {
 
 .text-customBlue {
   color: #4381C1;
+}
+
+.text-customDarkBlue {
+  color: #0064CB;
 }
 
 .text-customPink {
@@ -134,6 +154,10 @@ body {
 
 .text-customDarkGreen {
   color: #61AF3D;
+}
+
+.link-border {
+  border-top: 1px solid #0064CB; /* Indigo-500 */
 }
 
 .bg-overlay {
@@ -364,4 +388,36 @@ body {
   margin-top: 10px;
   font-weight: bold;
   color: #555;
+}
+
+/* Add the following CSS to your globals.css */
+
+.link-border {
+  border-top: 2px solid var(--customDarkBlue);
+}
+
+.link-active {
+  background-color: var(--customLightBlue);
+  color: var(--customGold);
+  border-color: var(--customGold);
+  z-index: 20;
+}
+
+
+.selected-link {
+  z-index: 10; /* Ensure the selected link is on top */
+}
+
+/* Ensure border between slots is only one line */
+.flex > :not(:last-child) {
+  border-bottom-width: 1px;
+}
+
+/* globals.css */
+
+/* Example: Ensuring no borders/margins affect the "My Account" text */
+.no-border {
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }

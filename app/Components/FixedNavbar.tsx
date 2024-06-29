@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ShoppingCart from '../Stack/ShoppingCart';
@@ -12,10 +12,8 @@ interface CartItem {
   quantity: number;
 }
 
-const StillNavbar: React.FC = () => {
+const FixedNavbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [showNavbar, setShowNavbar] = useState<boolean>(false);
-  const [showLogo, setShowLogo] = useState<boolean>(false);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
@@ -47,39 +45,16 @@ const StillNavbar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = (): void => {
-      if (window.scrollY > 50) {
-        setShowNavbar(true);
-        setShowLogo(true);
-      } else {
-        setShowNavbar(false);
-        setShowLogo(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleLogoClick = (): void => {
-    setShowLogo(false);
-    setTimeout(() => window.scrollTo(0, 0), 0); // Scroll to top to reset the view
-    setTimeout(() => setShowLogo(true), 500); // Re-show the logo after a short delay
-  };
-
   return (
     <>
-      <nav className="bg-customGold p-4 fixed top-0 left-0 right-0 z-50">
+      <nav className="bg-customGold p-4 fixed top-0 left-0 right-0 z-50 shadow-md border-b-4 border-customDarkBlue">
         <div className="container mx-auto flex justify-between items-center relative">
-          <Link href="/points" className="text-customBlue">
+          <Link href="/points" className="text-customBlue z-20">
             My Points: xxx
           </Link>
 
-            <div className="navbar-logo-container">
+          <div className="absolute inset-0 flex justify-center items-center z-10">
+            <Link href="/">
               <Image
                 src="/images/MainBrand2 Navy.png"
                 alt="Brand Logo"
@@ -87,11 +62,11 @@ const StillNavbar: React.FC = () => {
                 height={50}
                 objectFit="contain"
                 className="navbar-logo"
-                onClick={handleLogoClick}
               />
-            </div>
+            </Link>
+          </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 z-20">
             <Link href="/MyAccount/AccountDetails" className="text-customBlue">
               User Profile
             </Link>
@@ -110,8 +85,38 @@ const StillNavbar: React.FC = () => {
           </div>
         </div>
         {isMenuOpen && (
-          <div className="bg-customBlue mt-2 p-4 rounded">
+          <div className="bg-customBlue mt-2 p-4 rounded shadow-md z-20">
             <ul className="space-y-2">
+              <li>
+                <Link href="/contact" className="text-customGold">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/points" className="text-customGold">
+                  My Points
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-customGold">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/points" className="text-customGold">
+                  My Points
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-customGold">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/points" className="text-customGold">
+                  My Points
+                </Link>
+              </li>
               <li>
                 <Link href="/contact" className="text-customGold">
                   Contact
@@ -139,4 +144,4 @@ const StillNavbar: React.FC = () => {
   );
 };
 
-export default StillNavbar;
+export default FixedNavbar;
