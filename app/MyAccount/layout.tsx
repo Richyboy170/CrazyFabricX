@@ -9,13 +9,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col h-screen bg-customBlue">
       <FixedNavbar />
       <div className="flex justify-center w-full pt-20 md:pt-24">
-        <p className="text-3xl font-bold text-customGold" style={{ fontFamily: 'bm hanna_tff' }}>My Account</p>
+        <p className="text-3xl font-bold text-customGold underline" style={{ fontFamily: 'bm hanna_tff' }}>My Account</p>
       </div>
       <div className="flex flex-col md:flex-row flex-grow pt-2">
-        <div className="w-full md:w-64 bg-customBlue text-customDarkBlue pl-4" style={{ fontFamily: 'bm hanna_tff' }}>
+        <div className="w-full md:w-64 bg-customBlue text-customDarkBlue pl-4 pt-6" style={{ fontFamily: 'bm hanna_tff' }}>
           <NavLinks />
         </div>
-        <div className="flex-grow p-6 md:overflow-y-auto md:p-12 bg-customBlue text-customGold">
+        <div className="flex-grow p-6 md:overflow-y-auto md:px-12 bg-customBlue text-customGold">
           {children}
         </div>
       </div>
