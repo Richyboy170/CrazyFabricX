@@ -26,7 +26,7 @@ export default function NavLinks() {
             "relative flex h-[48px] grow items-center justify-center border-b-2 border-x-2 border-customDarkBlue gap-2 p-3 text-sm font-medium bg-customLightBlue hover:text-customGold md:flex-none md:justify-start md:p-2 md:px-3",
             {
               'border-t-2': index === 0 || pathname === link.href,
-              'bg-sky-100 text-customGold border-3 border-customGold z-20': pathname === link.href,
+              'bg-customLightBlue text-customGold border-3 border-customGold z-20': pathname === link.href,
               'border-customDarkBlue': pathname !== link.href,
             }
           )}

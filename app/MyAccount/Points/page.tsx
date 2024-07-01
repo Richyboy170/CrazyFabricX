@@ -27,9 +27,9 @@ const Points: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4" style={{ fontFamily: 'bm hanna_tff' }}>
       <h1 className="text-3xl font-bold mb-6 text-center text-customGold">Exchange Your Points</h1>
-      <p className="mb-6 text-center text-lg text-customBlue">You can exchange your points for the products below. Simply click on the product to confirm the exchange.</p>
+      <p className="mb-6 text-center text-lg text-white">You can exchange your points for the products below. Simply click on the product to confirm the exchange.</p>
       <div className="grid grid-cols-1 gap-8">
         {products.map((product) => (
           <div key={product.id} className="ticket-card flex">

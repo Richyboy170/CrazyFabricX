@@ -7,30 +7,39 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --custom-gold: #FFFF00;
+  --custom-blue: #4381C1;
+  --custom-dark-blue: #0064CB;
+  --custom-red: #FFD4CA;
+  --custom-green: #AAC0AF;
+  --custom-pink: #FFD5FF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb: 48, 48, 48;
+    --custom-gold: #FFD700;
+    --custom-blue: #5B8EBD;
+    --custom-light-blue: #c0deff;
+    --custom-dark-blue: #003E6B;
+    --custom-red: #FF7F7F;
+    --custom-green: #5F9EA0;
+    --custom-pink: #FFB6C1;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  font-family: 'Colonna MT', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
@@ -47,101 +56,70 @@ body {
   font-style: normal;
 }
 
-body {
-  font-family: 'Colonna MT', sans-serif;
-  margin: 0;
-  padding: 0;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 .bg-customGold {
-  background-color: #FFFF00;
-  background-image: url('/images/GeaR White.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.bg-customGoldo {
-  background-color: #FFFF00;
-  background-size: contain;
-  background-position: center;
-}
-
-.bg-customLightGold {
-  background-color: #FFFF5B;
-  background-size: contain;
-  background-position: center;
+  background: linear-gradient(135deg, var(--custom-gold) 0%, #FFFF5B 100%);
 }
 
 .bg-customBlue {
-  background-color: #4381C1;
-  background-size: contain;
-  background-position: center;
+  background: linear-gradient(135deg, var(--custom-blue) 0%, #5993CF 100%);
 }
 
 .bg-customLightBlue {
-  background-color: #5993CF;
-  background-size: contain;
-  background-position: center;
+  background: linear-gradient(135deg, var(--custom-light-blue) 0%, #57a4f6 100%);
 }
 
 .bg-customDarkBlue {
-  background-color: #0064CB;
-  background-size: contain;
-  background-position: center;
-}
-
-
-
-.bg-customPink {
-  background-color: #FFD5FF;
-  background-size: contain;
-  background-position: center;
-}
-
-.bg-customGreen {
-  background-color: #AAC0AF;
-  background-size: contain;
-  background-position: center;
+  background: linear-gradient(135deg, var(--custom-dark-blue) 0%, var(--custom-blue) 100%);
 }
 
 .bg-customRed {
-  background-color: #FFD4CA;
-  background-size: contain;
-  background-position: center;
+  background: linear-gradient(135deg, var(--custom-red) 0%, #FFB3A1 100%);
 }
 
-.border-customDarkBlue{
-  border-color: #0064CB;
+.bg-customGreen {
+  background: linear-gradient(135deg, var(--custom-green) 0%, #C1E1C1 100%);
 }
 
-.border-customGold{
-  border-color: #FFFF00;
+.bg-customPink {
+  background: linear-gradient(135deg, var(--custom-pink) 0%, #FFB6C1 100%);
+}
+
+.border-customDarkBlue {
+  border-color: var(--custom-dark-blue);
+}
+
+.border-customGold {
+  border-color: var(--custom-gold);
 }
 
 .text-customGold {
-  color: #FFFF00;
+  color: var(--custom-gold);
 }
 
 .text-customGreen {
-  color: #AAC0AF;
+  color: var(--custom-green);
 }
 
 .text-customBlue {
-  color: #4381C1;
+  color: var(--custom-blue);
 }
 
 .text-customDarkBlue {
-  color: #0064CB;
+  color: var(--custom-dark-blue);
 }
 
 .text-customPink {
-  color: #FFD5FF;
+  color: var(--custom-pink);
 }
 
 .text-customRed {
-  color: #FFD4CA;
+  color: var(--custom-red);
 }
 
 .text-customDarkRed {
@@ -157,7 +135,7 @@ body {
 }
 
 .link-border {
-  border-top: 1px solid #0064CB; /* Indigo-500 */
+  border-top: 1px solid var(--custom-dark-blue); /* Indigo-500 */
 }
 
 .bg-overlay {
@@ -182,6 +160,7 @@ body {
   max-height: 50px;
   animation: pop-up 0.5s forwards;
 }
+
 .navbar-logo-container {
   position: relative;
   display: flex;
@@ -194,7 +173,6 @@ body {
   max-width: 100px; /* Ensure the logo doesn't expand beyond its intended size */
   max-height: 50px;
 }
-
 
 .ad-content {
   display: flex;
@@ -232,7 +210,7 @@ body {
   animation: pulse 2s infinite;
 }
 
-/* Testimonials globals.css */ 
+/* Testimonials globals.css */
 
 .testimonialsContainer {
   display: flex;
@@ -240,7 +218,7 @@ body {
   align-items: center;
   width: 100%;
   padding: 20px;
-  background-color: #4381C1;
+  background: var(--custom-blue);
 }
 
 .heading {
@@ -348,61 +326,18 @@ body {
   color: #555;
 }
 
-
-/* globals.css */
-
-.productsTestimonialsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.card {
-  width: 600px;
-  border: 1px solid #ddd;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.imageContainer {
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.imageContainer img {
-  max-width: 100%;
-  max-height: 100%;
-  border: 5px solid #ddd;
-  border-radius: 10px;
-}
-
-.instagram {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #555;
-}
-
 /* Add the following CSS to your globals.css */
 
 .link-border {
-  border-top: 2px solid var(--customDarkBlue);
+  border-top: 2px solid var(--custom-dark-blue);
 }
 
 .link-active {
-  background-color: var(--customLightBlue);
-  color: var(--customGold);
-  border-color: var(--customGold);
+  background-color: var(--custom-light-blue);
+  color: var(--custom-gold);
+  border-color: var(--custom-gold);
   z-index: 20;
 }
-
 
 .selected-link {
   z-index: 10; /* Ensure the selected link is on top */

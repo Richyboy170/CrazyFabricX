@@ -81,7 +81,7 @@ const AddressesPage: React.FC = () => {
             <h2 className="text-xl font-bold text-customDarkBlue no-underline" style={{ fontFamily: 'bm hanna_tff' }}>BILLING ADDRESS</h2>
             <button
               onClick={() => handleEditClick('billing')}
-              className="px-4 py-2 bg-customGold text-red-500 font-bold rounded"
+              className="px-4 py-2 text-red-500 font-bold rounded"
               style={{ fontFamily: 'bm hanna_tff' }}
             >
               Edit
@@ -102,7 +102,7 @@ const AddressesPage: React.FC = () => {
             <h2 className="text-xl font-bold text-customDarkBlue no-underline" style={{ fontFamily: 'bm hanna_tff' }}>SHIPPING ADDRESS</h2>
             <button
               onClick={() => handleEditClick('shipping')}
-              className="px-4 py-2 bg-customGold text-red-500 font-bold rounded"
+              className="px-4 py-2 text-red-500 font-bold rounded"
               style={{ fontFamily: 'bm hanna_tff' }}
             >
               Edit
