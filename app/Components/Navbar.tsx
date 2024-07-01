@@ -12,7 +12,11 @@ interface CartItem {
   quantity: number;
 }
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  userPoints: number;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ userPoints }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [showNavbar, setShowNavbar] = useState<boolean>(false);
   const [showLogo, setShowLogo] = useState<boolean>(false);
@@ -75,8 +79,8 @@ const Navbar: React.FC = () => {
     <>
       <nav className={`bg-customGold p-4 fixed top-0 left-0 right-0 z-50 ${showNavbar ? 'visible' : 'invisible'}`}>
         <div className="container mx-auto flex justify-between items-center relative">
-          <Link href="/points" className="text-customBlue z-20">
-            My Points: xxx
+          <Link href="/MyAccount/Points" className="text-customBlue z-20">
+            My Points: {userPoints}
           </Link>
 
           {showLogo && (

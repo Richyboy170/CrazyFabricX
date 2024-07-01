@@ -33,9 +33,9 @@ const OrderPage: React.FC = () => {
   return (
     <div className="container mx-auto bg-customBlue">
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-customBlue border border-customDarkBlue text-white">
+        <table className="min-w-full bg-customBlue border-2 border-customDarkBlue text-white">
           <thead className="text-customGold">
-            <tr>
+            <tr className="">
               <th className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>Order Number</th>
               <th className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>Date</th>
               <th className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>Status</th>
@@ -47,12 +47,12 @@ const OrderPage: React.FC = () => {
           <tbody>
             {orders.map((order) => (
               <tr key={order.orderNumber}>
-                <td className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.orderNumber}</td>
-                <td className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.date}</td>
-                <td className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.status}</td>
-                <td className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.total} Baht</td>
-                <td className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.pointsGain}</td>
-                <td className="px-4 py-2 border-b border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>
+                <td className="px-4 py-2 border-2 border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.orderNumber}</td>
+                <td className="px-4 py-2 border-2 border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.date}</td>
+                <td className="px-4 py-2 border-2 border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.status}</td>
+                <td className="px-4 py-2 border-2 border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.total} Baht</td>
+                <td className="px-4 py-2 border-2 border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>{order.pointsGain}</td>
+                <td className="px-4 py-2 border-2 border-customDarkBlue text-center" style={{ fontFamily: 'bm hanna_tff' }}>
                   <Link href={`/MyAccount/Orders/${order.orderNumber}`} className="text-white hover:underline">View Details</Link>
                 </td>
               </tr>

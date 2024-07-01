@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="text-base" style={{ fontFamily: 'bm hanna_tff' }}>
       <p>Hello Richy(not Richy?
       <Link href="/MyAccount/LogInAndRegister" className="underline"> Log out </Link>
        )

@@ -12,7 +12,11 @@ interface CartItem {
   quantity: number;
 }
 
-const FixedNavbar: React.FC = () => {
+interface FixedNavbarProps {
+  userPoints: number;
+}
+
+const FixedNavbar: React.FC<FixedNavbarProps> = ({ userPoints }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -49,8 +53,8 @@ const FixedNavbar: React.FC = () => {
     <>
       <nav className="bg-customGold p-4 fixed top-0 left-0 right-0 z-50 shadow-md border-b-4 border-customDarkBlue">
         <div className="container mx-auto flex justify-between items-center relative">
-          <Link href="/points" className="text-customBlue z-20">
-            My Points: xxx
+          <Link href="/MyAccount/Points" className="text-customBlue z-20">
+            My Points: {userPoints}
           </Link>
 
           <div className="absolute inset-0 flex justify-center items-center z-10">
@@ -87,36 +91,6 @@ const FixedNavbar: React.FC = () => {
         {isMenuOpen && (
           <div className="bg-customBlue mt-2 p-4 rounded shadow-md z-20">
             <ul className="space-y-2">
-              <li>
-                <Link href="/contact" className="text-customGold">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/points" className="text-customGold">
-                  My Points
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-customGold">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/points" className="text-customGold">
-                  My Points
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-customGold">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/points" className="text-customGold">
-                  My Points
-                </Link>
-              </li>
               <li>
                 <Link href="/contact" className="text-customGold">
                   Contact
