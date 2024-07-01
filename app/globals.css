@@ -22,7 +22,7 @@
     --background-end-rgb: 48, 48, 48;
     --custom-gold: #FFD700;
     --custom-blue: #5B8EBD;
-    --custom-light-blue: #c0deff;
+    --custom-light-blue: #76b8ff;
     --custom-dark-blue: #003E6B;
     --custom-red: #FF7F7F;
     --custom-green: #5F9EA0;
@@ -442,4 +442,10 @@ body {
 .ticket-info {
   padding: 10px;
   color: #61AF3D;
+}
+
+/* globals.css */
+
+.font-bm-hanna {
+  font-family: 'bm hanna_tff';
 }

@@ -503,3 +503,9 @@ body {
   padding: 10px;
   color: #61AF3D;
 }
+
+/* globals.css */
+
+.font-bm-hanna {
+  font-family: 'bm hanna_tff';
+}
