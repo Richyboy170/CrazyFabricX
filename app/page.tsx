@@ -6,6 +6,8 @@ import Navbar from '@/app/Components/Navbar'
 import SetOfCards from '@/app/LandingPage/SetOfCards'
 import Testimonials from '@/app/Testimonials/Testimonials'
 import EndingSlide from '@/app/Components/EndingSlide'
+import { CartProvider } from '@/app/Stack/CartContext';
+
 
 export default function Home() {
     const [userPoints, setUserPoints] = useState<number>(0);
@@ -30,12 +32,14 @@ export default function Home() {
 
     return (
         <div className="bg-customBlue">
-          <Navbar userPoints={userPoints} />
-          <LandingAds />
-          <SetOfCards />
-          <hr className="border-t-2 border-gray-300 my-8" />
-          <Testimonials />
-          <EndingSlide />
+            <CartProvider>
+            <Navbar userPoints={userPoints} />
+            <LandingAds />
+            <SetOfCards />
+            <hr className="border-t-2 border-gray-300 my-8" />
+            <Testimonials />
+            <EndingSlide />
+            </CartProvider>
         </div>
     );
 }

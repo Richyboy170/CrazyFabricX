@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { signIn } from 'next-auth/react';
 
-const LoginRegisterPage: React.FC = () => {
+const LogInAndRegister: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
@@ -12,10 +12,28 @@ const LoginRegisterPage: React.FC = () => {
     e.preventDefault();
 
     if (isRegistering) {
-      // Handle registration logic here (e.g., call API to register user)
-      console.log('Registering with:', email, password);
+      // Handle registration logic here
+      try {
+        const response = await fetch('/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          console.log('Registered successfully, user ID:', data.userId);
+        } else {
+          console.error('Error registering:', data.error);
+        }
+      } catch (error) {
+        console.error('Error registering:', error);
+      }
     } else {
-      // Handle login logic here (e.g., call API to log in user)
+      // Handle login logic here
       const result = await signIn('credentials', {
         redirect: false,
         email,
@@ -102,4 +120,4 @@ const LoginRegisterPage: React.FC = () => {
   );
 };
 
-export default LoginRegisterPage;
+export default LogInAndRegister;

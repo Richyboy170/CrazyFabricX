@@ -27,14 +27,14 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ isOpen, onClose, cartItems,
   return (
     <>
       <div className={`fixed top-0 right-0 h-full w-full md:w-2/5 bg-customLightGold shadow-lg transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 z-50`}>
-        <div className="p-4 border-b flex justify-between items-center bg-customLightGold">
+        <div className="p-4 border-b flex justify-between items-center bg-customGold">
           <h2 className="text-xl font-bold text-customBlue">Shopping Cart ({totalItems})</h2>
           <button onClick={onClose} className="text-xl font-bold text-customBlue">&times;</button>
         </div>
         <div className="p-4 bg-customLightBlue h-[calc(90%-128px)] overflow-y-auto">
           <div className="p-4 grid gap-4">
             {cartItems.map((item) => (
-              <div key={item.id} className="flex items-center justify-between bg-customLightGold p-4 shadow rounded-lg">
+              <div key={item.id} className="flex items-center justify-between bg-customGold p-4 shadow rounded-lg">
                 <div className="relative w-16 h-16">
                   <Image src={item.shoppingCartImage} alt={item.name} layout="fill" objectFit="cover" className="" />
                 </div>
@@ -53,7 +53,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({ isOpen, onClose, cartItems,
             ))}
           </div>
         </div>
-        <div className="p-4 border-t bg-customLightGold">
+        <div className="p-4 border-t bg-customGold">
           <h3 className="text-lg font-bold text-customBlue">Total: {totalPrice} Baht</h3>
           <button className="w-full mt-4 px-4 py-2 bg-customBlue text-white font-bold rounded">Checkout</button>
         </div>
